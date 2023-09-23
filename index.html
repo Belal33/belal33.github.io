@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Teko:wght@700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap"
+  rel="stylesheet">
+  <!-- google fonts -->
+</head>
+<style>
+  .my-color {
+    color: #856fa6 !important;
+  }
+  .bg-mycolor{
+    background-color: #856fa6 !important;
+  }
+  body {
+    font-family: 'Roboto Mono', monospace;
+  }
+  ul{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+  }
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+  img {
+    max-width: 100%;
+  }
+
+  .nav-item a {
+      letter-spacing: -1px;
+  }
+   
+  .nav-item:hover a,
+  .content .main {
+    color: #856fa6;
+  }
+  @media (max-width: 480px) {
+    
+    .nav-item a {
+      font-size: 14px;
+      letter-spacing: -1px;
+    }
+    nav ul.container-fluid {
+      justify-content: center !important;
+      
+    }
+  }
+  
+  
+    
+  .ball {
+  /* --x: 50%;
+  --y: 50%; */
+  background-color: tomato;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  z-index: -1;
+  display: none;
+  color: white;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+  
+  
+  .figure {
+      display: none;
+  }
+  @media (min-width: 768px) {
+    
+    .figure {
+      display: block;
+    }
+    
+  }
+  .figure-myskills {
+      display: none;
+  }
+  @media (min-width: 992px) {
+    
+    .figure-myskills {
+      display: block;
+    }
+    
+  }
+
+    .email {
+      font-size: 18px;
+    }
+    @media (min-width: 768px) {
+    
+      .email {
+        font-size: 28px;
+      }
+    
+    }
+  
+    .facebook:hover{
+      background-color: #1976d2;
+    }
+  
+    .twitter:hover{
+      background-color: #00a6de;
+    }
+  
+    .youtube:hover{
+      background-color: red;
+    }
+</style>
+<body>
+  <nav class="navbar navbar-light bg-light" style="height: 46px !important;">
+    <div class="container-fluid d-flex ">
+
+        <ul class="container-fluid d-flex justify-content-end">
+          <li class="nav-item mx-2 fs-5 fw-bold">
+            <a class="nav-link"  href="#about">AboutMe</a>
+          </li>
+          <li class="nav-item mx-2 fs-5 fw-bold">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item mx-2 fs-5 fw-bold">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item mx-2 fs-5 fw-bold">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+
+    </div>
+  </nav>
+  <main >
+    <header id="about">
+      
+      <div class="container d-flex align-items-center" style="height: calc(100vh - 46px)!important;">
+
+        <div class="row position-relative ball-box border-start border-end border-dark  ">
+          <div class="ball">B</div>
+          <div class="ball">E</div>
+          <div class="ball">L</div>
+          <div class="ball">A</div>
+          <div class="ball">L</div>
+          <div class="content d-flex justify-content-center flex-column col" >
+            <div class="main my-color mb-3 d-flex flex-column">
+              <span class="fs-1 lh-sm">Hi</span>
+              <span class="fs-1 lh-sm">I'm Belal</span>
+              <span class="fs-1 lh-sm">Front-end Developer</span>
+            </div>
+            <p class="lh-sm">
+              I design and develop experiences that make people's lives simpler through Web apps. I work with Html5 CSS3 JavaScript React
+            </p>
+          </div>
+          <div class="figure col">
+            <img src="Programming-rafiki.png" alt="developer">
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="" id="skills">
+      <div class="container bg-light py-5  ">
+        <h2 class="text-center py-5 fs-1" >MY SKILLS</h2>
+        <div class="content row p-2">
+          <div class=" col  figure-myskills">
+            <img src="skills.png" alt="">
+          </div>
+          <div class=" col skills-progress ">
+
+            <div class="skill mb-4">
+              <div class="skill-name fs-5 fw-bold ">
+                HTML
+              </div>
+              <div class="progress bg-white" style="height: 25px;">
+                <div class=" fs-6 progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="92.1" aria-valuemin="0" aria-valuemax="100" style=" width: 92.1%;background-color: #e65125 !important;">92.1%</div>
+              </div>
+            </div>
+
+            <div class="skill mb-4">
+              <div class="skill-name fs-5 fw-bold ">
+                CSS
+              </div>
+              <div class="progress bg-white" style="height: 25px;">
+                <div class=" fs-6 progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style=" width: 85%; background-color: #0b73b9 !important;">85%</div>
+              </div>
+            </div>
+
+            <div class="skill mb-4">
+              <div class="skill-name fs-5 fw-bold ">
+                JavaScript
+              </div>
+              <div class="progress bg-white" style="height: 25px;">
+                <div class=" fs-6 bg-warning progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style=" width: 60%; background-color: #e6a125 !important;">60%</div>
+              </div>
+
+            </div>
+            <div class="skill mb-4">
+              <div class="skill-name fs-5 fw-bold ">
+                Python
+              </div>
+              <div class="progress bg-white" style="height: 25px;">
+                <div class=" fs-6 progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style=" width: 75%; background-color:#856fa6;">75%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-5" id="projects" >
+      <div class="container">
+        <h2 class="text-center py-5 fs-1" >Projects</h2>
+        <div class="row">
+          <div class="col col-12 col-lg-4 col-sm-6 mb-5">
+              <img src="typingtest.PNG" class="card-img-top" alt="...">
+              <div class="p-3 bg-light">
+                <h5 class="my-color">Typing Test</h5>
+                <p class="card-text"> test how fast you can write on keyboard you have only 30 seconds</p>
+                <a href="https://belal33.github.io/test_typing/" class="btn btn-primary bg-mycolor">Visit</a>
+              </div>
+          </div>
+          <div class="col col-12 col-lg-4 col-sm-6 mb-5">
+              <img src="todoPNG.PNG" class="card-img-top" alt="...">
+              <div class="p-3 bg-light">
+                <h5 class="my-color">ToDo</h5>
+                <p class="card-text"> create your own todo list to manage your task </p>
+                <a href="https://belal33.github.io/ToDo/" class="btn btn-primary bg-mycolor">Visit</a>
+              </div>
+          </div>
+          <div class="col col-12 col-lg-4 col-sm-6 mb-5">
+              <img src="landingpage.PNG" class="card-img-top" alt="...">
+              <div class="p-3 bg-light">
+                <h5 class="my-color">Landing Page</h5>
+                <p class="card-text">simple  landingpage with some animations and common sections</p>
+                <a href="https://belal33.github.io/templatethree/" class="btn btn-primary bg-mycolor">Visit</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-light py-5 mt-5 " id="contact">
+      <div class="container">
+        <h2 class="text-center  pb-2 display-2" style="letter-spacing: -5px;" >Contact</h2>
+        <div class="section py-5 text-center">
+          <p class="fs-4 m-0">Feel free to drop us a line at:</p>
+          <a class= "email d-block my-color fw-bold my-3"  target="-blank" href="mailto:belalelbanna7@gmail.com?subject=Contact">
+            belalelbanna7@gmail.com
+          </a>
+          <div class="social">
+            Find Us On Social Networks
+            <a href="#"  >
+              <img width="20" class="twitter" src="twitter_2111738.png" alt="">
+  
+            </a>
+            <a href="#" >
+  
+              <img class="youtube" width="20" src="youtube_1384028.png" alt="">
+            </a>
+            <a href="#" >
+  
+              <img width="20" class="facebook" src="facebook_4494464.png" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+  </main>
+
+  <script>
+
+    let page = document.querySelector(".ball-box");
+    let balls = document.querySelectorAll(".ball");
+
+    balls.forEach((ballElement, i) => {
+      let color = Math.floor(360 * Math.random());
+
+      ballElement.style.setProperty(
+        "background-color",
+        "hsl(" + color + "135, 70%, 50%)"
+      );
+      
+      setTimeout(moveBall, 1000 * i, ballElement);
+    });
+
+    function moveBall(
+      ballElement,
+      angle = 360 * Math.random(),
+      speedPerSecond = 70 +10  * Math.random(), // speed in pixels per second
+      framsPerSecond = 60
+    ) {
+      let dt = 1000 / framsPerSecond;
+      let v = speedPerSecond / 1000;
+      let dR = v * dt;
+      let dy = dR * Math.sin((angle * Math.PI) / 180);
+      let dx = dR * Math.cos((angle * Math.PI) / 180);
+      let t = 0;
+      let x = 10;
+      let y = 10;
+      let container = ballElement.parentElement;
+      let containerRect = container.getBoundingClientRect();
+      ballElement.style.setProperty(
+        "display",
+        "block"
+      );
+
+      const ballmoving = setInterval(() => {
+        let ballRect = ballElement.getBoundingClientRect();
+        if (
+          ballRect.right+5 >= containerRect.right ||
+          ballRect.left-5 <= containerRect.left
+        ) {
+          dx = -1 * dx;
+        }
+
+        if (
+          ballRect.top-5 <= containerRect.top ||
+          ballRect.bottom+5 >= containerRect.bottom
+        ) {
+          dy = -1 * dy;
+        }
+
+        // check if ball hits a box
+
+        x = +x + dx;
+        y = +y + dy;
+        ballElement.style.setProperty("bottom", y + "px");
+        ballElement.style.setProperty("left", x + "px");
+        t += dt;
+
+        // console.log(t / dt);
+ //        if (t / 1000 > 10) {
+ //          clearInterval(ballmoving);
+ //          ballElement.style.setProperty("transition", " 0.5s");
+ //          ballElement.style.setProperty("bottom", 10 + "px");
+ //          ballElement.style.setProperty("left", 10 + "px");
+ //          ballElement.style.setProperty(
+ //            "display",
+ //            "none"
+ //          );
+ //        }
+      }, dt);
+    }
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
