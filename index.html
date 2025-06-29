@@ -1,359 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-  <!-- google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-  href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Teko:wght@700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap"
-  rel="stylesheet">
-  <!-- google fonts -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Belal's Full-Stack Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main.css"/>
 </head>
-<style>
-  .my-color {
-    color: #856fa6 !important;
-  }
-  .bg-mycolor{
-    background-color: #856fa6 !important;
-  }
-  body {
-    font-family: 'Roboto Mono', monospace;
-  }
-  ul{
-    list-style: none;
-    text-decoration: none;
-    margin: 0;
-  }
-  a{
-    text-decoration: none;
-    color: inherit;
-  }
-  img {
-    max-width: 100%;
-  }
-
-  .nav-item a {
-      letter-spacing: -1px;
-  }
-   
-  .nav-item:hover a,
-  .content .main {
-    color: #856fa6;
-  }
-  @media (max-width: 480px) {
-    
-    .nav-item a {
-      font-size: 14px;
-      letter-spacing: -1px;
-    }
-    nav ul.container-fluid {
-      justify-content: center !important;
-      
-    }
-  }
-  
-  
-    
-  .ball {
-  /* --x: 50%;
-  --y: 50%; */
-  background-color: tomato;
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  z-index: -1;
-  display: none;
-  color: white;
-  font-weight: bold;
-  line-height: 30px;
-}
-
-  
-  
-  .figure {
-      display: none;
-  }
-  @media (min-width: 768px) {
-    
-    .figure {
-      display: block;
-    }
-    
-  }
-  .figure-myskills {
-      display: none;
-  }
-  @media (min-width: 992px) {
-    
-    .figure-myskills {
-      display: block;
-    }
-    
-  }
-
-    .email {
-      font-size: 18px;
-    }
-    @media (min-width: 768px) {
-    
-      .email {
-        font-size: 28px;
-      }
-    
-    }
-  
-    .facebook:hover{
-      background-color: #1976d2;
-    }
-  
-    .twitter:hover{
-      background-color: #00a6de;
-    }
-  
-    .youtube:hover{
-      background-color: red;
-    }
-</style>
-<body>
-  <nav class="navbar navbar-light bg-light" style="height: 46px !important;">
-    <div class="container-fluid d-flex ">
-
-        <ul class="container-fluid d-flex justify-content-end">
-          <li class="nav-item mx-2 fs-5 fw-bold">
-            <a class="nav-link"  href="#about">AboutMe</a>
-          </li>
-          <li class="nav-item mx-2 fs-5 fw-bold">
-            <a class="nav-link" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item mx-2 fs-5 fw-bold">
-            <a class="nav-link" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item mx-2 fs-5 fw-bold">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
-
+<body class="page-body">
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a class="nav-brand" href="#">BB</a>
+      <button id="nav-toggle" class="nav-toggle-btn" aria-label="Toggle navigation">
+        <span class="material-icons" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="7" width="16" height="2.5" rx="1.2" fill="currentColor"/>
+            <rect x="4" y="14.5" width="16" height="2.5" rx="1.2" fill="currentColor"/>
+          </svg>
+        </span>
+      </button>
+      <div id="nav-menu" class="nav-menu">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#courses">Courses</a>
+        <a class="nav-link" href="#certificates">Certificates</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
     </div>
   </nav>
-  <main >
-    <header id="about">
-      
-      <div class="container d-flex align-items-center" style="height: calc(100vh - 46px)!important;">
 
-        <div class="row position-relative ball-box border-start border-end border-dark  ">
-          <div class="ball">B</div>
-          <div class="ball">E</div>
-          <div class="ball">L</div>
-          <div class="ball">A</div>
-          <div class="ball">L</div>
-          <div class="content d-flex justify-content-center flex-column col" >
-            <div class="main my-color mb-3 d-flex flex-column">
-              <span class="fs-1 lh-sm">Hi</span>
-              <span class="fs-1 lh-sm">I'm Belal</span>
-              <span class="fs-1 lh-sm">Front-end Developer</span>
-            </div>
-            <p class="lh-sm">
-              I design and develop experiences that make people's lives simpler through Web apps. I work with Html5 CSS3 JavaScript React
-            </p>
-          </div>
-          <div class="figure col">
-            <img src="Programming-rafiki.png" alt="developer">
-          </div>
+  <header >
+    <div class="header-section">
+
+    <div class="header-content ">
+      <h1 class="header-title">
+        Hello, I'm <span class="header-name">Belal Elbanna</span>
+      </h1>
+      <p class="header-subtitle">A Creative Full-Stack Developer & UI/UX Enthusiast passionate about building beautiful, intuitive digital experiences.</p>
+      <a class="header-button" href="#projects">View My Work
+        <span class="header-button-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5v14m0 0l-7-7m7 7l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+    <div class="header-image-container">
+      <img src="Programming-rafiki.png" alt="Programming Illustration" class="header-illustration" />
+      <img src="my_image.jpeg" alt="Belal" class="profile-image" />
+    </div>
+  </div>
+
+  </header>
+
+  <section class="about-section" id="about">
+    <div class="about-content">
+      <h2 class="section-title">AboutMe</h2>
+      <p class="about-text mb-6">
+        I'm a passionate full-stack developer with a knack for creating elegant and efficient solutions. I thrive on turning complex problems into beautiful, intuitive digital experiences. My expertise spans across various technologies, allowing me to build robust applications from the ground up.
+      </p>
+      <p class="about-text">
+        When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying a good cup of coffee. I'm always eager to learn and grow, both personally and professionally.
+      </p>
+    </div>
+  </section>
+
+  <section class="skills-section" id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3 class="skill-group-title">Frontend</h3>
+        <div class="skill-tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">React</span>
+          <span class="tag">Tailwind CSS</span>
+          <span class="tag">Framer Motion</span>
         </div>
       </div>
-    </header>
-    <section class="" id="skills">
-      <div class="container bg-light py-5  ">
-        <h2 class="text-center py-5 fs-1" >MY SKILLS</h2>
-        <div class="content row p-2">
-          <div class=" col  figure-myskills">
-            <img src="skills.png" alt="">
-          </div>
-          <div class=" col skills-progress ">
-
-            <div class="skill mb-4">
-              <div class="skill-name fs-5 fw-bold ">
-                HTML
-              </div>
-              <div class="progress bg-white" style="height: 25px;">
-                <div class=" fs-6 progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="92.1" aria-valuemin="0" aria-valuemax="100" style=" width: 92.1%;background-color: #e65125 !important;">92.1%</div>
-              </div>
-            </div>
-
-            <div class="skill mb-4">
-              <div class="skill-name fs-5 fw-bold ">
-                CSS
-              </div>
-              <div class="progress bg-white" style="height: 25px;">
-                <div class=" fs-6 progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style=" width: 85%; background-color: #0b73b9 !important;">85%</div>
-              </div>
-            </div>
-
-            <div class="skill mb-4">
-              <div class="skill-name fs-5 fw-bold ">
-                JavaScript
-              </div>
-              <div class="progress bg-white" style="height: 25px;">
-                <div class=" fs-6 bg-warning progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style=" width: 60%; background-color: #e6a125 !important;">60%</div>
-              </div>
-
-            </div>
-            <div class="skill mb-4">
-              <div class="skill-name fs-5 fw-bold ">
-                Python
-              </div>
-              <div class="progress bg-white" style="height: 25px;">
-                <div class=" fs-6 progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style=" width: 75%; background-color:#856fa6;">75%</div>
-              </div>
-            </div>
-          </div>
+      <div class="skill-group">
+        <h3 class="skill-group-title">Backend</h3>
+        <div class="skill-tags">
+          <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Docker</span>
         </div>
       </div>
-    </section>
-    <section class="py-5" id="projects" >
-      <div class="container">
-        <h2 class="text-center py-5 fs-1" >Projects</h2>
-        <div class="row">
-          <div class="col col-12 col-lg-4 col-sm-6 mb-5">
-              <img src="typingtest.PNG" class="card-img-top" alt="...">
-              <div class="p-3 bg-light">
-                <h5 class="my-color">Typing Test</h5>
-                <p class="card-text"> test how fast you can write on keyboard you have only 30 seconds</p>
-                <a href="https://belal33.github.io/test_typing/" class="btn btn-primary bg-mycolor">Visit</a>
-              </div>
-          </div>
-          <div class="col col-12 col-lg-4 col-sm-6 mb-5">
-              <img src="todoPNG.PNG" class="card-img-top" alt="...">
-              <div class="p-3 bg-light">
-                <h5 class="my-color">ToDo</h5>
-                <p class="card-text"> create your own todo list to manage your task </p>
-                <a href="https://belal33.github.io/ToDo/" class="btn btn-primary bg-mycolor">Visit</a>
-              </div>
-          </div>
-          <div class="col col-12 col-lg-4 col-sm-6 mb-5">
-              <img src="landingpage.PNG" class="card-img-top" alt="...">
-              <div class="p-3 bg-light">
-                <h5 class="my-color">Landing Page</h5>
-                <p class="card-text">simple  landingpage with some animations and common sections</p>
-                <a href="https://belal33.github.io/templatethree/" class="btn btn-primary bg-mycolor">Visit</a>
-              </div>
-          </div>
+      <div class="skill-group">
+        <h3 class="skill-group-title">Other</h3>
+        <div class="skill-tags">
+          <span class="tag">Git</span>
+          <span class="tag">Figma</span>
+          <span class="tag">UI/UX</span>
+          <span class="tag">REST APIs</span>
         </div>
       </div>
-    </section>
-    <section class="bg-light py-5 mt-5 " id="contact">
-      <div class="container">
-        <h2 class="text-center  pb-2 display-2" style="letter-spacing: -5px;" >Contact</h2>
-        <div class="section py-5 text-center">
-          <p class="fs-4 m-0">Feel free to drop us a line at:</p>
-          <a class= "email d-block my-color fw-bold my-3"  target="-blank" href="mailto:belalelbanna7@gmail.com?subject=Contact">
-            belalelbanna7@gmail.com
-          </a>
-          <div class="social">
-            Find Us On Social Networks
-            <a href="#"  >
-              <img width="20" class="twitter" src="twitter_2111738.png" alt="">
-  
-            </a>
-            <a href="#" >
-  
-              <img class="youtube" width="20" src="youtube_1384028.png" alt="">
-            </a>
-            <a href="#" >
-  
-              <img width="20" class="facebook" src="facebook_4494464.png" alt="">
-            </a>
+    </div>
+  </section>
+
+  <section class="projects-section" id="projects">
+      <h2 class="section-title">Projects</h2>
+      <!-- Frontend Projects Slider -->
+      <div class="projects-subsection">
+        <h3 class="projects-subtitle">Frontend Projects</h3>
+        <div class="slider-container" id="frontend-slider">
+        <div class="scroll-btns">
+          <button class="slider-btn slider-btn-prev" aria-label="Previous frontend project">&#8592;</button>
+          <button class="slider-btn slider-btn-next" aria-label="Next frontend project">&#8594;</button>
+
+        </div>
+          <div class="slider-track">
+            <!-- Slide 1 -->
+            <!-- Add more frontend project slides here -->
+             <div style="padding: 20px; height: 100%;"></div>
           </div>
+          <div class="slider-pagination"></div>
         </div>
       </div>
-      
-    </section>
-  </main>
+      <!-- Backend Projects Slider -->
+      <div class="projects-subsection">
+        <h3 class="projects-subtitle">Backend Projects</h3>
+        <div class="slider-container" id="backend-slider">
+          <div class="scroll-btns">
 
-  <script>
+          <button class="slider-btn slider-btn-prev" aria-label="Previous backend project">&#8592;</button>
+          <button class="slider-btn slider-btn-next" aria-label="Next backend project">&#8594;</button>
+        </div>
 
-    let page = document.querySelector(".ball-box");
-    let balls = document.querySelectorAll(".ball");
+          <div class="slider-track">
+            <!-- Slide 1 -->
+            <div style="padding: 20px; height: 100%;"></div>
+            <!-- Add more backend project slides here -->
+          </div>
+          <div class="slider-pagination"></div>
+        </div>
+      </div>
+  </section>
 
-    balls.forEach((ballElement, i) => {
-      let color = Math.floor(360 * Math.random());
+  <section class="certificates-section" id="certificates">
+    <h2 class="section-title">Certificates</h2>
+    <div class="certificates-grid">
+      <!-- Certificates will be dynamically inserted here by main.js -->
+    </div>
+  </section>
 
-      ballElement.style.setProperty(
-        "background-color",
-        "hsl(" + color + "135, 70%, 50%)"
-      );
-      
-      setTimeout(moveBall, 1000 * i, ballElement);
-    });
+  <section class="contact-section" id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-cards">
+      <a class="contact-card contact-email" href="mailto:belal@example.com" target="_blank" rel="noopener" aria-label="Email">
+        <span class="contact-icon">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect width="24" height="24" rx="12" fill="#f8f9fa"/><path d="M4 7.5l8 6 8-6" stroke="#856fa6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="7" width="16" height="10" rx="2" stroke="#856fa6" stroke-width="2"/></svg>
+        </span>
+        <span class="contact-label">Email</span>
+        <span class="contact-value">belal@example.com</span>
+      </a>
+      <a class="contact-card contact-whatsapp" href="https://wa.me/201234567890" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <span class="contact-icon">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect width="24" height="24" rx="12" fill="#f8f9fa"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.767.967-.94 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.205 5.077 4.372.71.306 1.263.489 1.695.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347z" stroke="#25D366" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="contact-label">WhatsApp</span>
+        <span class="contact-value">+20 123 456 7890</span>
+      </a>
+      <a class="contact-card contact-linkedin" href="https://www.linkedin.com/in/belal-elbanna" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <span class="contact-icon">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect width="24" height="24" rx="12" fill="#f8f9fa"/><path d="M8.5 10.5v5m0 0v-5m0 5h-2v-5h2zm5 0v-2.5c0-.828-.672-1.5-1.5-1.5s-1.5.672-1.5 1.5V15m3 0h-2v-2.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5V15zm-7-7.5a1 1 0 11-2 0 1 1 0 012 0zm0 0v0z" stroke="#0077B5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value">/in/belal-elbanna</span>
+      </a>
+    </div>
+  </section>
 
-    function moveBall(
-      ballElement,
-      angle = 360 * Math.random(),
-      speedPerSecond = 70 +10  * Math.random(), // speed in pixels per second
-      framsPerSecond = 60
-    ) {
-      let dt = 1000 / framsPerSecond;
-      let v = speedPerSecond / 1000;
-      let dR = v * dt;
-      let dy = dR * Math.sin((angle * Math.PI) / 180);
-      let dx = dR * Math.cos((angle * Math.PI) / 180);
-      let t = 0;
-      let x = 10;
-      let y = 10;
-      let container = ballElement.parentElement;
-      let containerRect = container.getBoundingClientRect();
-      ballElement.style.setProperty(
-        "display",
-        "block"
-      );
-
-      const ballmoving = setInterval(() => {
-        let ballRect = ballElement.getBoundingClientRect();
-        if (
-          ballRect.right+5 >= containerRect.right ||
-          ballRect.left-5 <= containerRect.left
-        ) {
-          dx = -1 * dx;
-        }
-
-        if (
-          ballRect.top-5 <= containerRect.top ||
-          ballRect.bottom+5 >= containerRect.bottom
-        ) {
-          dy = -1 * dy;
-        }
-
-        // check if ball hits a box
-
-        x = +x + dx;
-        y = +y + dy;
-        ballElement.style.setProperty("bottom", y + "px");
-        ballElement.style.setProperty("left", x + "px");
-        t += dt;
-
-        // console.log(t / dt);
- //        if (t / 1000 > 10) {
- //          clearInterval(ballmoving);
- //          ballElement.style.setProperty("transition", " 0.5s");
- //          ballElement.style.setProperty("bottom", 10 + "px");
- //          ballElement.style.setProperty("left", 10 + "px");
- //          ballElement.style.setProperty(
- //            "display",
- //            "none"
- //          );
- //        }
-      }, dt);
-    }
-
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-
+  <footer class="page-footer">
+    <p class="footer-text">© 2023 Belal. All rights reserved.</p>
+    <p class="footer-text">Designed with <span class="footer-heart">❤</span> and creativity.</p>
+  </footer>
+  <canvas id="canvas"></canvas>
+  <script src="main.js"></script>
+  <!-- <script src="animatedballs.js"></script> -->
 </body>
 </html>
