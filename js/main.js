@@ -70,7 +70,7 @@ let backendProjects = [
     title: 'AI Powered Text Editor',
     description: 'A robust backend API platform with authentication, data storage, and Dockerized deployment.',
     skills: ["Django", "Python", "PostgreSQL", "Docker","TypeScript","Next.js","Tailwind CSS"],
-    videourl: './ai.webm',
+    videourl: './aiwriter_screen.webm',
   },
 
   // Add more backend project slides here if needed
