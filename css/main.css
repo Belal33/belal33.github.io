@@ -45,6 +45,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
+  opacity: 0.2;
 	width: 100%;
 	height: 100%;
 	z-index: -1; /* Behind all other content */
@@ -147,6 +148,7 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	max-width: 1280px;
+  padding:0.3rem 1rem; /* px-4 */
 }
 
 .nav-brand {
@@ -157,7 +159,6 @@ body {
 	letter-spacing: 0.09em;
 	text-shadow: 0 4px 16px rgba(133, 111, 166, 0.13);
 	border-radius: 0.7rem;
-	padding: 0.2rem 1.1rem;
 	/* background: rgba(255,255,255,0.18); */
 	/* box-shadow: 0 2px 8px rgba(133, 111, 166, 0.10); */
 	transition: color 0.3s;
@@ -188,15 +189,14 @@ body {
   transform: rotate(90deg) scale(1.08);
   box-shadow: var(--shadow-md);
 }
-.nav-toggle-btn:active,
-.nav-toggle-btn:focus {
+.nav-toggle-btn:active{
   background: var(--gradient-end);
   /* outline: 2px solid var(--main-color); */
 }
 .nav-toggle-btn .material-icons, .nav-toggle-btn svg {
-  font-size: 2.2rem;
-  width: 2.2rem;
-  height: 2.2rem;
+  font-size: 1.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
   transition: all 0.3s cubic-bezier(.4,0,.2,1);
   display: flex;
   align-items: center;
@@ -518,7 +518,6 @@ body {
     flex-direction: column-reverse;
     gap: 2rem;
     padding: 2.5rem 0.5rem 2.5rem 0.5rem;
-    min-height: 90vh;
   }
   .header-content {
     align-items: center;
@@ -800,7 +799,6 @@ width: 100%;
   opacity: 1;
 }
 .slider-btn {
-  /* transform: translateY(50%); */
   border: none;
   border-radius: 50%;
   width: 2.7rem;
@@ -809,25 +807,20 @@ width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(133, 111, 166, 0.12);
+  box-shadow: var(--shadow-lg);
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
   outline: none;
 }
-/* .slider-btn:hover,
+.slider-btn:hover,
 .slider-btn:focus {
-  transform: translateY(-50%) scale(1.08);
-  border-color: var(--main-color);
+  transform: scale(1.08);
 }
+
 .slider-btn:active {
-  transform: translateY(-50%) scale(0.96);
-} */
-/* .slider-btn-prev {
-  left: 10px;
+  transform:  scale(0.96);
 }
-.slider-btn-next {
-  right: 10px;
-} */
+
 @media (min-width: 640px) {
   .slider-btn {
     width: 3.2rem;
@@ -848,6 +841,8 @@ width: 100%;
 	align-items: center;
 	position: sticky;
 	left: 0;
+  top:50%;
+  z-index: 3;
 	padding: 1rem 0 ;
 
 }
@@ -969,7 +964,6 @@ width: 100%;
 /* --- Enhanced Page Footer --- */
 .page-footer {
   background:var(--main-gray); 
-  box-shadow: 0 -2px 24px rgba(133, 111, 166, 0.08);
   color: var(--text-secondary);
   text-align: center;
   padding: 3rem 1rem 2rem 1rem;

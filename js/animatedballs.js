@@ -8,44 +8,47 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-function generateRandomText(length = 3) {
-	const characters = "BELAL ELBANNA";
-	let result = "";
-	for (let i = 0; i < length; i++) {
-		result += characters.charAt(Math.floor(Math.random() * characters.length));
-	}
-	return result;
-}
 
 class Ball {
-	constructor(r,x,y,dx,dy,color,text) {
+	static curentWord
+	constructor({ r, x, y, dx, dy, color, text, fontSize }) {
 		this.radius = r || Math.random() * 20 + 10;
-		this.x = x || Math.random() * (canvas.width - this.radius * 2) + this.radius;
-		this.y = y || Math.random() * (canvas.height - this.radius * 2) + this.radius;
-		this.dx = dx || (Math.random() - 0.5) * 8;
-		this.dy = dy || (Math.random() - 0.5) * 8;
+		this.x =
+			x || Math.random() * (canvas.width - this.radius * 2) + this.radius;
+		this.y =
+			y || Math.random() * (canvas.height - this.radius * 2) + this.radius;
+		this.dx = dx || (Math.random()-2 ) ;
+		this.dy = dy || (Math.random()-2 ) ;
 		this.color = color || this.getRandomColor();
-		this.text = text || this.generateRandomText(Math.floor(Math.random() * 2 + 2)); // 2-3 characters
-	}
+		this.text =
+			text || this.generateRandomText(); // 2-3 characters
+		this.fontSize = fontSize || this.radius * 0.5;
+		}
 
 	getRandomColor() {
 		const colors = [
-			"#FF6B6B",
-			"#4ECDC4",
-			"#45B7D1",
-			"#96CEB4",
-			"#FFEEAD",
-			"#FF9999",
+			// Theme-matching colors (blue, purple, white, gray, accent)
+			"#1A1A2E", // dark blue
+			"#16213E", // deeper blue
+			"#0F3460", // navy
+			"#533483", // purple
+			"#393E46", // dark gray
+			"#00ADB5", // cyan accent
+			"#222831"  // background gray
 		];
 		return colors[Math.floor(Math.random() * colors.length)];
 	}
 	generateRandomText(length = 3) {
-		const characters = "BELAL ELBANNA";
-		let result = "";
-		for (let i = 0; i < length; i++) {
-			result += characters.charAt(Math.floor(Math.random() * characters.length));
+		// words to atract the user to contact me
+		const words =["B","E","L","A","L"];
+		if (!Ball.curentWord) {
+			Ball.curentWord = words[0];
+		}else{
+			Ball.curentWord = words[words.indexOf(Ball.curentWord)+1 % words.length];
 		}
-		return result;
+		console.log(Ball.curentWord);
+		return Ball.curentWord;
+		
 	}
 
 	update() {
@@ -70,7 +73,7 @@ class Ball {
 		ctx.closePath();
 
 		// Draw text
-		ctx.font = `${this.radius * 0.5}px Arial`;
+		ctx.font = `${this.fontSize}px Arial bold `;
 		ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
 		ctx.textAlign = "center";
 		ctx.textBaseline = "middle";
@@ -79,10 +82,16 @@ class Ball {
 }
 
 const balls = [];
-const numberOfBalls = 20;
+const numberOfBalls =5;
 
 for (let i = 0; i < numberOfBalls; i++) {
-	balls.push(new Ball());
+
+//  start the balls from right bottom
+setTimeout(() => {
+	
+	balls.push(new Ball({fontSize:30,r:30,x:canvas.width-60,y:canvas.height-60}));
+}, i * 1500);
+
 }
 
 function animate() {
