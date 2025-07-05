@@ -66,17 +66,59 @@ let fontendProjects = [
 ];
 
 let backendProjects = [
+
   {
-    title: 'AI Powered Text Editor',
-    description: 'A robust backend API platform with authentication, data storage, and Dockerized deployment.',
-    skills: ["Django", "Python", "PostgreSQL", "Docker","TypeScript","Next.js","Tailwind CSS"],
+    title: 'AI Powered content writer',
+    description: 'A full-stack application that uses AI to generate content for a user, with features including autocomplete, paraphrasing, deep search, and Excalidraw integration.',
+    skills: ["Django", "Python", "PostgreSQL", "Redis","TypeScript","Next.js","Tailwind CSS","websockets","Excalidraw","OpenAI","SWR","JWT","React","Django REST Framework","Channels","OAuth2"],
     videourl: './aiwriter_screen.webm',
   },
 
   // Add more backend project slides here if needed
 ];
 
+let skills = {
+	Frontend: [
+		"HTML5",
+		"CSS3",
+		"JavaScript",
+    "TypeScript",
+		"React",
+		"Tailwind CSS",
+		"Next.js",
+		"Jquery",
+		"Canvas",
+		"Bootstrap",
+		"SWR",
+    "Axios",
+    "Redux",
+	],
+	Backend: [
+		"Python",
+		"Django",
+		"Django REST Framework",
+		"PostgreSQL",
+		"Channels",
+		"Sqlite3",
+		"Redis",
+		"websockets",
+		"JWT",
+		"OAuth2",
 
+	],
+	Other: ["Git","Docker","Bash Scripting","Linux","AWS","Heroku","Vercel","Railway"],
+};
+
+let certificates = [
+
+	{
+		title: "AWS Certified Cloud Practitioner",
+		issuer: "Amazon Web Services",
+		link: "https://drive.google.com/file/d/1LJJuekGX5MRkQC5tQ3QAmibhzEA3ccAL/view",
+
+		icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 17 17 23 15.79 13.88"></polyline></svg>`,
+	},
+];
 
 
 
@@ -117,6 +159,66 @@ function setupProjectsSlides(sliderId,projects) {
   });
 }
 
+function setupSkills(skills) {
+  const grid = document.querySelector(".skills-grid");
+  if (!grid) return;
+  grid.innerHTML = ''; // Clear existing content
+
+  for (const groupName in skills) {
+    const groupDiv = document.createElement('div');
+    groupDiv.className = 'skill-group';
+
+    const title = document.createElement('h3');
+    title.className = 'skill-group-title';
+    title.textContent = groupName;
+
+    const tagsDiv = document.createElement('div');
+    tagsDiv.className = 'skill-tags';
+
+    skills[groupName].forEach(skillName => {
+      const tag = document.createElement('span');
+      tag.className = 'tag';
+      tag.textContent = skillName;
+      tagsDiv.appendChild(tag);
+    });
+
+    groupDiv.appendChild(title);
+    groupDiv.appendChild(tagsDiv);
+    grid.appendChild(groupDiv);
+  }
+}
+
+function setupCertificates(certificates) {
+	const grid = document.querySelector(".certificates-grid");
+	if (!grid) return;
+
+	certificates.forEach((cert) => {
+		const cardLink = document.createElement("a");
+		cardLink.className = "certificate-card";
+		cardLink.href = cert.link;
+		cardLink.target = "_blank";
+		cardLink.rel = "noopener noreferrer";
+		cardLink.setAttribute(
+			"aria-label",
+			`View certificate for ${cert.title} from ${cert.issuer}`
+		);
+
+		cardLink.innerHTML = `
+      <div class="certificate-header">
+        <div class="certificate-icon-container">${cert.icon}</div>
+        <h4 class="certificate-title">${cert.title}</h4>
+      </div>
+      <p class="certificate-issuer">Issued by <strong>${cert.issuer}</strong></p>
+      <div class="certificate-footer">
+        <span class="certificate-view-link">
+          View Certificate
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </span>
+      </div>
+    `;
+		grid.appendChild(cardLink);
+	});
+}
 
 // --- Native Scroll Slider for Projects ---
 function setupScrollSlider(sliderId) {
@@ -196,50 +298,7 @@ function setupScrollSlider(sliderId) {
   updateActiveSlide();
 }
 
-let certificates = [
-  {
-    title: 'Full-Stack Web Development',
-    issuer: 'Coursera',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 17 17 23 15.79 13.88"></polyline></svg>`,
-    link: '#'
-  },
-  {
-    title: 'Responsive Web Design',
-    issuer: 'freeCodeCamp',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 17 17 23 15.79 13.88"></polyline></svg>`,
-    link: '#'
-  },
-  {
-    title: 'JavaScript Algorithms & Data Structures',
-    issuer: 'freeCodeCamp',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 17 17 23 15.79 13.88"></polyline></svg>`,
-    link: '#'
-  }
-];
 
-function setupCertificates(certificates) {
-  const grid = document.querySelector('.certificates-grid');
-  if (!grid) return;
-
-  certificates.forEach(cert => {
-    const cardLink = document.createElement('a');
-    cardLink.className = 'certificate-card';
-    cardLink.href = cert.link;
-    cardLink.target = '_blank';
-    cardLink.rel = 'noopener noreferrer';
-    cardLink.setAttribute('aria-label', `View certificate for ${cert.title} from ${cert.issuer}`);
-
-    cardLink.innerHTML = `
-      <div class="certificate-icon-container">${cert.icon}</div>
-      <div class="certificate-content">
-        <h4 class="certificate-title">${cert.title}</h4>
-        <p class="certificate-issuer">Issued by ${cert.issuer}</p>
-      </div>
-      <div class="certificate-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></div>
-    `;
-    grid.appendChild(cardLink);
-  });
-}
 
 function initializeEventListeners(){
   const navToggle = document.getElementById("nav-toggle");
@@ -277,6 +336,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Set up frontend and backend project slides
   setupProjectsSlides('frontend-slider', fontendProjects);
   setupProjectsSlides('backend-slider', backendProjects);
+  setupSkills(skills);
   setupCertificates(certificates);
   // Set up scroll sliders
   setupScrollSlider('frontend-slider');

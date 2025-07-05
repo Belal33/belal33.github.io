@@ -10,20 +10,25 @@ window.addEventListener("resize", resizeCanvas);
 
 
 class Ball {
-	static curentWord
-	constructor({ r, x, y, dx, dy, color, text, fontSize }) {
+	static curentWord;
+	constructor({ r, x, y, dr, angle, color, text, fontSize }) {
+		// angle should be in range (-0.5 to -1) pi
+
+		const ang = angle || -Math.random() * Math.PI;
 		this.radius = r || Math.random() * 20 + 10;
 		this.x =
 			x || Math.random() * (canvas.width - this.radius * 2) + this.radius;
 		this.y =
 			y || Math.random() * (canvas.height - this.radius * 2) + this.radius;
-		this.dx = dx || (Math.random()-2 ) ;
-		this.dy = dy || (Math.random()-2 ) ;
+		this.dx = dr * Math.cos(ang);
+		this.dy = dr * Math.sin(ang);
+		// this.dx = dx || (Math.random()-1.5 ) ;
+		// this.dy = dy || (Math.random()-1.5 ) ;
+
 		this.color = color || this.getRandomColor();
-		this.text =
-			text || this.generateRandomText(); // 2-3 characters
+		this.text = text || this.generateRandomText(); // 2-3 characters
 		this.fontSize = fontSize || this.radius * 0.5;
-		}
+	}
 
 	getRandomColor() {
 		const colors = [
@@ -34,21 +39,21 @@ class Ball {
 			"#533483", // purple
 			"#393E46", // dark gray
 			"#00ADB5", // cyan accent
-			"#222831"  // background gray
+			"#222831", // background gray
 		];
 		return colors[Math.floor(Math.random() * colors.length)];
 	}
 	generateRandomText(length = 3) {
 		// words to atract the user to contact me
-		const words =["B","E","L","A","L"];
+		const words = ["B", "E", "L", "A", "L"];
 		if (!Ball.curentWord) {
 			Ball.curentWord = words[0];
-		}else{
-			Ball.curentWord = words[words.indexOf(Ball.curentWord)+1 % words.length];
+		} else {
+			Ball.curentWord =
+				words[words.indexOf(Ball.curentWord) + (1 % words.length)];
 		}
 		console.log(Ball.curentWord);
 		return Ball.curentWord;
-		
 	}
 
 	update() {
@@ -82,15 +87,23 @@ class Ball {
 }
 
 const balls = [];
-const numberOfBalls =5;
+const welcomeMessage = "I Hope To Find You Well.".split(" ");
+const numberOfBalls = welcomeMessage.length;
+
+const isLargeScreen = window.matchMedia("(min-width: 1024px)").matches;
+let font = isLargeScreen ? 30 : 20;
+let r = isLargeScreen ? 40 : 30;
+let dr = isLargeScreen ? 2 : 1;
+let angle = isLargeScreen ? -Math.PI / 2 : undefined;
 
 for (let i = 0; i < numberOfBalls; i++) {
 
 //  start the balls from right bottom
 setTimeout(() => {
 	
-	balls.push(new Ball({fontSize:30,r:30,x:canvas.width-60,y:canvas.height-60}));
-}, i * 1500);
+
+	balls.push(new Ball({fontSize:font,angle,r,dr,x:canvas.width-80,y:canvas.height-80,text:welcomeMessage[i]}));
+}, i * 1000);
 
 }
 
