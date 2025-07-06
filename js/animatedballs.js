@@ -14,20 +14,22 @@ class Ball {
 	constructor({ r, x, y, dr, angle, color, text, fontSize }) {
 		// angle should be in range (-0.5 to -1) pi
 
-		const ang = angle || -Math.random() * Math.PI;
+		const ang = angle || -1*Math.random() * Math.PI;
+		const v = dr||Math.random() + 1;
 		this.radius = r || Math.random() * 20 + 10;
 		this.x =
 			x || Math.random() * (canvas.width - this.radius * 2) + this.radius;
 		this.y =
 			y || Math.random() * (canvas.height - this.radius * 2) + this.radius;
-		this.dx = dr * Math.cos(ang);
-		this.dy = dr * Math.sin(ang);
+		this.dx = v * Math.cos(ang);
+		this.dy = v * Math.sin(ang);
 		// this.dx = dx || (Math.random()-1.5 ) ;
 		// this.dy = dy || (Math.random()-1.5 ) ;
 
 		this.color = color || this.getRandomColor();
 		this.text = text || this.generateRandomText(); // 2-3 characters
 		this.fontSize = fontSize || this.radius * 0.5;
+		console.log(ang)
 	}
 
 	getRandomColor() {
@@ -79,7 +81,7 @@ class Ball {
 
 		// Draw text
 		ctx.font = `${this.fontSize}px Arial bold `;
-		ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
+		ctx.fillStyle = "rgba(255, 255, 255)";
 		ctx.textAlign = "center";
 		ctx.textBaseline = "middle";
 		ctx.fillText(this.text, this.x, this.y);
@@ -87,14 +89,14 @@ class Ball {
 }
 
 const balls = [];
-const welcomeMessage = "I Hope To Find You Well.".split(" ");
-const numberOfBalls = welcomeMessage.length;
+const wordsArr = ["Next.js","Django","React","Tailwind","Odoo","AWS","Docker"];
+const numberOfBalls = wordsArr.length;
 
 const isLargeScreen = window.matchMedia("(min-width: 1024px)").matches;
-let font = isLargeScreen ? 30 : 20;
-let r = isLargeScreen ? 40 : 30;
-let dr = isLargeScreen ? 2 : 1;
-let angle = isLargeScreen ? -Math.PI / 2 : undefined;
+let font = isLargeScreen ? 25 : 20;
+let r = isLargeScreen ? 55 : 45;
+let dr = isLargeScreen? undefined: Math.random() + 0.5;
+let angle =  undefined;
 
 for (let i = 0; i < numberOfBalls; i++) {
 
@@ -102,8 +104,8 @@ for (let i = 0; i < numberOfBalls; i++) {
 setTimeout(() => {
 	
 
-	balls.push(new Ball({fontSize:font,angle,r,dr,x:canvas.width-80,y:canvas.height-80,text:welcomeMessage[i]}));
-}, i * 1000);
+	balls.push(new Ball({fontSize:font,angle,r,dr,x:canvas.width-80,y:canvas.height-80,text:wordsArr[i]}));
+}, i * 800);
 
 }
 
